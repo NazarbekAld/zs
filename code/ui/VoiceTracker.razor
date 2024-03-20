@@ -1,0 +1,54 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@using System.Collections.Generic;
+@namespace GeneralGame
+@inherits PanelComponent
+
+<root>
+	<div class="">Bro proxies can't do shit what the hell im gonna do??? (vc not working) and the chat</div>
+	@foreach(string steam in active) {
+		<div class="voice">
+				<div class="name">@steam</div>
+				<Image src="code/ui/icon/voice.png"></Image>
+		</div>
+	}
+</root>
+
+@code
+{
+	Voice voice;
+	private int prev = 0xFFFF;
+	TimeSince statechange = 0f;
+
+	[Sync]
+	private HashSet<string> active {get;set;} = new();
+	Connection conn;
+	protected override void OnEnabled() {
+		base.OnEnabled();		
+		voice = GameObject.Components.GetInAncestorsOrSelf<Voice>();
+	}
+	protected override void OnFixedUpdate() {
+		base.OnFixedUpdate();
+		if (conn is null)
+			conn = Network.OwnerConnection;
+
+		setState(conn.DisplayName, voice.IsRecording);
+	}
+
+	[Broadcast]
+	public void setState(string steam, bool vcstate) {
+		if (vcstate) {
+			active.Add(steam);
+		}
+		if (!vcstate && active.Contains(steam)) {
+			active.Remove(steam);
+		}
+		
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}

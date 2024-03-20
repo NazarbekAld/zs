@@ -1,0 +1,273 @@
+{
+  "__guid": "143a6c82-b40f-4d18-9b48-33ea144aaa24",
+  "GameObjects": [
+    {
+      "__guid": "57723daf-6b12-4e32-add9-81a777fe1625",
+      "Name": "Network",
+      "Position": "0,2.398247,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__guid": "486d56da-c972-4007-9555-ff79d2b156e4",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "c238095a-b6e5-4449-9d8b-10e7bbfe18f3",
+      "Name": "GameSessionMgr",
+      "Position": "1556.11,-670.6355,153.4577",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "adaab9b0-de46-4d79-a8f8-a00025d23499",
+      "Name": "Map",
+      "Position": "141.1331,470.4255,105.006",
+      "Tags": "map",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "03300886-d4c4-4ee0-89e3-63b4f9459d64",
+          "MapName": "https://asset.party/likestorml/house",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "a35e3d42-757c-4300-839f-17b043960ea3",
+      "Name": "Collider",
+      "Position": "-113.6609,1729.317,-519.7075",
+      "Scale": "73.34556,0.1977105,34.9803",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "c1d99054-3963-4bd2-bdc5-10ad3a8a8b72",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "cb6caf18-9fd2-4df9-8c75-18de86fd446d",
+      "Name": "Collider (1)",
+      "Position": "1727.69,104.409,-519.7075",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Scale": "73.34556,0.1977105,34.9803",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "eb8117fa-ddad-4b15-893c-0062e33ebd02",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "c7b4fb9a-caaa-4664-a07f-3d1440430ec8",
+      "Name": "Collider (2)",
+      "Position": "93.72131,-1717.245,-390.6276",
+      "Rotation": "0,0,-0.9999999,0.0000001490116",
+      "Scale": "73.34556,0.1977105,34.9803",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "e1b38742-c191-417e-bc38-7f6f095280d4",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "298bb823-176f-4989-82b1-3a170cfaaa4e",
+      "Name": "Collider (3)",
+      "Position": "-1874.43,-350.4529,-390.6276",
+      "Rotation": "0,0,-0.7071069,-0.7071065",
+      "Scale": "73.34556,0.1977105,34.9803",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "__guid": "db4dc90a-e112-4c7c-94f9-30a2c48b40ca",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "96a4d4a7-70b8-48bd-bc36-f53b52ce9c29",
+      "Name": "zspawn",
+      "Position": "1405.793,-67.21323,-234.2508",
+      "Rotation": "0,0,0.9914449,-0.1305261",
+      "Tags": "zspawn",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ZombieSpawner",
+          "__guid": "89c01209-0fb3-4c78-ac7f-f3a7ced11009",
+          "frequency": 25,
+          "zlimit": 5,
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombie.prefab"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "c920d2b8-ed50-489e-a98f-4d55854d19f4",
+      "Name": "door_wood",
+      "Position": "296.9086,95.33981,6.218315",
+      "Rotation": "0,-0.1305262,0,0.9914449",
+      "Tags": "hdmg,zdmg,prop",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "861b7f36-9489-4b6f-a748-8980c61b10b7",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/architecture/door/door_wood.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "f784f30c-e00f-47f5-938f-47bd28b21ddd",
+          "IsTrigger": false,
+          "Model": "models/architecture/door/door_wood.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "2bad859c-0f34-4e1c-94c4-321af570a486",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PropBase",
+          "__guid": "6de927eb-896a-4730-bcbb-9b6a6cbfb9af",
+          "propinfo": {
+            "_type": "gameobject",
+            "prefab": "code/prop/propinfo.prefab"
+          },
+          "Health": 1000,
+          "MaxHealth": 1000,
+          "nails": 0,
+          "nailStrength": 250,
+          "repairable": 0
+        }
+      ]
+    },
+    {
+      "__guid": "65bc0aa7-a387-4b9c-831e-0e553fc99fad",
+      "Name": "chair_01",
+      "Position": "310.0303,-31.9641,0.000008802712",
+      "Tags": "hdmg,zdmg,prop",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "__guid": "23183527-0e15-40c3-9612-2bf100da5870",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/props/furniture/chair_01.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "5236e8a3-3268-45ee-acc6-b95c8cfd97e7",
+          "IsTrigger": false,
+          "Model": "models/props/furniture/chair_01.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Rigidbody",
+          "__guid": "49c67947-4a10-4972-a719-313ba0d32171",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "PropBase",
+          "__guid": "c0cc6d5e-9444-45f8-88d6-4d21bc58439a",
+          "propinfo": {
+            "_type": "gameobject",
+            "prefab": "code/prop/propinfo.prefab"
+          },
+          "Health": 300,
+          "MaxHealth": 300,
+          "nails": 0,
+          "nailStrength": 150,
+          "repairable": 0
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": true,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "LastSaved": "2024-03-18T20:09:39.9428512\u002B06:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "fpopium.chair_01",
+    "fpopium.door_wood"
+  ]
+}

@@ -1,0 +1,245 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Collections.Generic;
+@using System;
+@using System.Linq;
+@namespace GeneralGame
+@inherits PanelComponent
+
+<root class=@(show ? "" : "hide")>
+	@if (!show) return;
+	<div class="title">Shop (Press B to close)</div>
+	<div class="types">
+		@foreach(WeaponType wt in types) {
+			@if (wt == current) {
+				<div class="button", style="height: 100%;">@wt</div>
+			}
+			@if (wt != current) {
+				<div class="button", onclick=@(() => { current = wt; isAmmoCurrent = false; select=null; })>@wt</div>
+			}
+		}
+		@if (!isAmmoCurrent) {
+				<div class="button" onclick=@(() => {isAmmoCurrent = true; select=null; current=WeaponType.Others;})>Ammo</div>
+		}
+		@if (isAmmoCurrent) {
+			<div class="button" style="height: 100%;">Ammo</div>
+		}
+	</div>
+	<div class="select">
+		<div class="weapons">
+			@if (components().Count > 0 && !isAmmoCurrent) {
+				@foreach(WeaponComponent wp in components()) {
+					if (wp.type == current) {
+						<div class="weapon" onclick=@(() => { select = wp; })>
+							<div class="name">@wp.DisplayName</div>
+							<div class="price">@(wp.cost)pts</div>
+						</div>
+					}
+				}
+			}
+			@if(isAmmoCurrent) {
+				@foreach(AmmoType at in ammoTypes) {
+					if (at == AmmoType.NONE) continue;
+					<div class="ammo", onclick=@(() => { buy(at); })>
+						<div class="info">
+							<div class="name">@at</div>
+							<div class="desc">@(WeaponComponent.boxAmount(at) + " " + toRealisticAmmoType(at))</div>
+						</div>
+						<div class="price">
+							<div class="more">Click to buy</div>
+							<div class="amount">@(WeaponComponent.priceTag(at, WeaponComponent.boxAmount(at)) + "pts")</div>
+						</div>
+					</div>
+				}
+			}
+		</div>
+		<div class="wp_info">
+			@if (select == null) {
+				<div>No gun selected.</div>
+			}
+			@if (select != null) {
+				<div class="wp_info_selected">
+					<div>
+						Name: @select.DisplayName
+					</div>
+					<div>
+						Primary Damage: @select.Damage
+					</div>
+					<div>
+						Fire Rate: @select.FireRate
+					</div>
+					@if (select is BaseMele) {
+						@{
+							var melee = select as BaseMele;
+						}
+						<div>
+							Seccondary Damage: @melee.SeccondaryDamage
+						</div>
+						<div>
+							Seccondary Fire Rate: @melee.SeccondaryFireRate
+						</div>
+						<div>
+							Range: @(melee.Range + " unit(s)")
+						</div>
+						<div>
+							Stamina Drain: @melee.staminaDrain
+						</div>
+						@if (melee.ammoType != AmmoType.NONE) {
+							<div>
+								Ammo Type: @(toRealisticAmmoType(melee.ammoType) + "(s)")
+							</div>
+						}
+					}
+					@if (select is BaseGun) {
+						@{
+							var gun = select as BaseGun;
+						}
+						<div>
+							Reload time: @(gun.ReloadTime + "s")
+						</div>
+						<div>
+							Spread: @(gun.Spread)
+						</div>
+						<div>
+							Is Automatic?: @(gun.IsAuto ? "Yes" : "No") 
+						</div>
+						<div>
+							Clip Size: @(gun.ClipSize)
+						</div>
+						<div>
+							Ammo Type: @(toRealisticAmmoType(gun.AmmoType) + "(s)")
+						</div>
+					}
+				</div>
+				<div class="buy_section">
+					<div class="buy", onclick=@(() => buy(select))>
+						Buy
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+
+</root>
+
+@code
+{
+
+	bool show { get; set; } = false;
+
+	[Property]
+	List<PrefabScene> weapons { get; set; }
+
+	[Property]
+	SoundEvent buySound {get;set;}
+	[Property]
+	SoundEvent errorSound {get;set;}
+	WeaponType current = WeaponType.Pistols;
+
+	WeaponComponent select = null;
+
+	bool isAmmoCurrent = false;
+
+	PlayerController player;
+
+	[Property]
+	Chat chat;
+	List<WeaponType> types = Enum.GetValues(typeof(WeaponType))
+                            .Cast<WeaponType>()
+                            .ToList();
+	
+	List<AmmoType> ammoTypes = Enum.GetValues(typeof(AmmoType))
+                            .Cast<AmmoType>()
+                            .ToList();
+
+	
+	// Do not use only for legacy code.
+	public string toRealisticAmmoType(AmmoType type) {
+		var ammoType = type.ToString();
+		if (type == AmmoType.Pistol) {
+			ammoType = "9mm";
+		}
+		if (type == AmmoType.Rifle) {
+			ammoType = "7.62x39mm";
+		}
+		return ammoType;
+	}
+
+	public void buy(WeaponComponent component) {
+		
+		if (component.cost > player.points) {
+			chat.AddTextLocal("Server", "Not enough points!");
+			errorSound.UI = true;
+			Sound.Play(errorSound);
+			return;
+		}
+		if ((player.Weapons as WeaponContainer).Has(component.GameObject)) {
+			chat.AddTextLocal("Server", "You already own that weapon!");
+			errorSound.UI = true;
+			Sound.Play(errorSound);
+			return;
+		}
+		chat.AddTextLocal("Server", "You bought " + component.DisplayName + " for " + component.cost + "pts!");
+
+		player.Weapons.Give(component.GameObject, true);
+		player.points -= component.cost;
+
+		Sound.Play(buySound);
+	}
+
+	public void buy(AmmoType ammo){
+		var box = WeaponComponent.boxAmount(ammo);
+		var cost = WeaponComponent.priceTag(ammo, box);
+
+		if (player.points < cost) {
+			chat.AddTextLocal("Server", "Not enough points!");
+			errorSound.UI = true;
+			Sound.Play(errorSound);
+			return;
+		}
+
+		chat.AddTextLocal("Server", "You bought " + toRealisticAmmoType(ammo) + " box(" + box + ") for " + cost + "pts!");
+
+		player.Ammo.Give(ammo, MathX.FloorToInt(box));
+		player.points -= cost;
+
+		Sound.Play(buySound);
+	}
+	protected override void OnUpdate() {
+		base.OnUpdate();
+
+		if (Input.Pressed("Shop")) {
+			show = !show;
+		}
+
+	
+	}
+
+	protected List<WeaponComponent> wcps = new();
+	
+	int currentIterations = 0;
+	protected List<WeaponComponent> components() {
+		if (wcps.Count > 0) 
+			return wcps;
+		if (currentIterations > 30) {
+			return wcps;
+		}
+		currentIterations++;
+
+		weapons.ForEach((p) => {
+			var pref = p as GameObject;
+			var ob = pref.Clone();
+			wcps.Add(ob.Components.GetInChildrenOrSelf<WeaponComponent>());
+			ob.Enabled = false;
+			
+		});
+		return components(); // Recursion because of shitty compiler
+	}
+
+	protected override void OnStart() {
+		base.OnStart();
+		player = GameObject.Components.GetInAncestorsOrSelf<PlayerController>();
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}

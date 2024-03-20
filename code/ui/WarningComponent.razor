@@ -1,0 +1,26 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="warningsign", onclick="@clean">
+			<h1>Warning</h1>
+		</div>
+	<div class="body", onclick="@clean">
+		<p>@warning</p>
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public string warning = "Unknown warning!";
+	public void clean() {
+		GameObject.Enabled = false;
+		GameObject.Destroy();
+	}
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}

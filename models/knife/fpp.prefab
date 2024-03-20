@@ -1,0 +1,70 @@
+{
+  "RootObject": {
+    "__guid": "850a01b3-dd13-4196-ad10-2a80ae897143",
+    "Name": "fpp",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "__guid": "0dffbc50-458d-4c72-840f-74354b4c416b",
+        "Name": "fpp",
+        "Position": "0,0,-151.0817",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "4d0dfb36-d78d-4f3e-ab3c-daed50e2bf32",
+            "AnimationGraph": "models/knife/knife.vanmgrph",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "models/knife/fp_knife.vmdl",
+            "RenderType": "Off",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "ViewModel",
+            "__guid": "6c3aca85-e171-4a62-a9f4-b86adafb88a2",
+            "animation": {
+              "_type": "component",
+              "component_id": "3200ecf5-7015-4513-83cd-ba52cca07474",
+              "go": "0dffbc50-458d-4c72-840f-74354b4c416b",
+              "component_type": "NativeModelAnimationStrat"
+            },
+            "doSprintAnimation": false,
+            "scale": 0.29999992,
+            "shift": "0,0,-9.600012",
+            "shiftRot": "0,0,0,0",
+            "ModelRenderer": {
+              "_type": "component",
+              "component_id": "4d0dfb36-d78d-4f3e-ab3c-daed50e2bf32",
+              "go": "0dffbc50-458d-4c72-840f-74354b4c416b",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "NativeModelAnimationStrat",
+            "__guid": "3200ecf5-7015-4513-83cd-ba52cca07474",
+            "aimAnimation": "b_aiming",
+            "attackAnimation": "b_attack",
+            "deployAnimation": "b_deploy",
+            "jumpAnimation": "b_jump",
+            "mdl": {
+              "_type": "component",
+              "component_id": "4d0dfb36-d78d-4f3e-ab3c-daed50e2bf32",
+              "go": "0dffbc50-458d-4c72-840f-74354b4c416b",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "secondaryAttackAnimation": "b_power_attack"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

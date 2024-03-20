@@ -1,0 +1,33 @@
+{
+  "RootObject": {
+    "Id": "aa1ff0a2-35be-4255-b186-f7b03b72c3b8",
+    "Name": "nail",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Children": [
+      {
+        "Id": "7c99dbdb-c1fc-42bc-98c4-2959d47723aa",
+        "Name": "Nail",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "models/nail/nail.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "NailHandler"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

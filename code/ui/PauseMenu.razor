@@ -1,0 +1,57 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@using Sandbox.Network
+@attribute [StyleSheet]
+
+@code
+{
+
+	[Property]
+	public SoundEvent global;
+
+	[Property]
+	public SoundEvent primary;
+
+	@* [Property]
+	public GameObject warningprefab; *@
+
+	public void GlobalClickSound() {
+		Sound.Play(global);
+	}
+	public void PrimaryClickSound() {
+		Sound.Play(primary);
+	}
+
+	@* public void todo(string moreinfo) {
+		var clone = warningprefab.Clone();
+		if (clone.Components.TryGet<WarningComponent>(out var warningComponent)) {
+			warningComponent.warning = "TODO! " + moreinfo;
+		}
+	} *@
+
+	public void close() {
+		GameObject.Enabled = false;
+		
+	}
+
+        /// <summary>
+        /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+        /// </summary>
+        protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}
+
+<root>
+	<div class="menu">
+			<h1 class="title">Zombie Survival</h1>
+			<div class="button-play", onclick=@(() => { PrimaryClickSound(); close(); })>
+				<h1>Resume</h1>
+			</div>
+			<div class="button", onclick=@(() => {
+				GlobalClickSound(); 
+				GameNetworkSystem.Disconnect(); 
+				GameManager.ActiveScene.LoadFromFile("scene/lobby.scene");
+				})>Quit</div>
+	</div>
+</root>
+

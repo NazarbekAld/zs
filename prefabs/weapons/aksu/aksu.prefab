@@ -1,0 +1,73 @@
+{
+  "RootObject": {
+    "__guid": "fb967b01-c7c7-4174-a632-27e70ea4f4fa",
+    "Name": "aksu",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "4b67ab8a-a6ee-4ed1-8620-599260de6edb",
+        "BodyGroups": 9493,
+        "CreateBoneObjects": false,
+        "Model": "models/aksu/w/ak74u_modern_ak74u_mag_ref.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BaseGun",
+        "__guid": "71ca2bc8-3290-41c9-8863-90b0488a9f5d",
+        "aimPos": "-1,1.92,0.57",
+        "aimRotation": "0,0,0,0",
+        "AmmoType": "Rifle",
+        "ClipSize": 30,
+        "cost": 20,
+        "Damage": 20,
+        "DamageForce": 5,
+        "DefaultAmmo": 90,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Ak74U",
+        "EmptyClipSound": "sounds/weapons/empty_assaultrifles.sound",
+        "EmptyReloadSoundSequence": "models/aksu/aksu_reload_empty.sndseq",
+        "EmptyReloadTime": 3,
+        "FireRate": 9,
+        "FireSound": "models/aksu/ak74u_fire1.sound",
+        "HoldType": "Rifle",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-3,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": true,
+        "IsDeployed": false,
+        "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
+        "MuzzleSmoke": "particles/impact.generic.smokepuff.vpcf",
+        "Recoil": "-30,0,0",
+        "ReloadSoundSequence": "models/aksu/aksu_reload.sndseq",
+        "ReloadTime": 3,
+        "runRotation": "-0.02255756,0.08418597,0.2578342,0.9622502",
+        "Spread": 0.01,
+        "type": "Rifles",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/aksu/vm_aksu.prefab"
+        }
+      },
+      {
+        "__type": "SphereCollider",
+        "__guid": "55899992-d16a-4851-b465-c3a9b25b91ed",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Radius": 10,
+        "Static": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

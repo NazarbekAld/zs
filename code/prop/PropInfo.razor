@@ -1,0 +1,36 @@
+@using Sandbox;
+@using Sandbox.UI;
+@namespace GeneralGame
+@inherits PanelComponent
+
+<root>
+	<div class="name">@source.GameObject.Name</div>
+	<div class="repair"><HealthBar Current=@source.repairable Max=@source.repairableMax fontPrecentage=@(15f)/></div>
+	<div class="health"><HealthBar Current=@source.Health Max=@source.MaxHealth fontPrecentage=@(30f)/></div>
+</root>
+
+@code
+{
+	[Property]
+	private PropBase source;
+
+	public void setSource(PropBase source) {
+		this.source = source;
+	}
+
+	protected override void OnFixedUpdate() {
+		base.OnFixedUpdate();
+
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() {
+		if (source == null) {
+			Log.Info(GameObject);
+			return 0;
+		}
+		return System.HashCode.Combine( source.repairable, source.Health );
+	}
+}

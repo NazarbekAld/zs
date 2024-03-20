@@ -1,0 +1,45 @@
+{
+  "RootObject": {
+    "__guid": "e7b40085-f5fc-49aa-b03c-3fbff5a0f734",
+    "Name": "zfist",
+    "Position": "220.5448,304.5447,75.38867",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "BaseMele",
+        "__guid": "5a9cbf7e-a668-42b8-923d-ec07831d2177",
+        "behaviours": [],
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "ammoType": "NONE",
+        "AttackSound": "sounds/zombie/zomb_runner_male1-attack01.sound",
+        "cost": 0,
+        "Damage": 30,
+        "DamageForce": 5,
+        "DeployTime": 0.5,
+        "FireRate": 4,
+        "HitSound": "sounds/zombie/zomb_runner_male1-attack02.sound",
+        "HitWorldSound": "sounds/zombie/zomb_runner_male1-attack03.sound",
+        "HoldType": "Punch",
+        "idlePos": "0,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "sounds/zombie/zomb_runner_male1-attack01.sound",
+        "Punch": 0,
+        "Range": 80,
+        "runRotation": "0,0,0,0",
+        "SeccondaryDamage": 30,
+        "SeccondaryFireRate": 4,
+        "staminaDrain": 30,
+        "type": "Others"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

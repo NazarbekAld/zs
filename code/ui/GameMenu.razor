@@ -1,0 +1,72 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@attribute [StyleSheet]
+
+@code
+{
+
+	[Property]
+	public SoundEvent global;
+
+	[Property]
+	public SoundEvent primary;
+
+	[Property]
+	public GameObject warningprefab;
+
+	[Property]
+	public GameObject lobbymenuprefab;
+
+	public void GlobalClickSound() {
+		Sound.Play(global);
+	}
+	public void PrimaryClickSound() {
+		Sound.Play(primary);
+	}
+
+	public void todo(string moreinfo) {
+		var clone = warningprefab.Clone();
+		if (clone.Components.TryGet<WarningComponent>(out var warningComponent)) {
+			warningComponent.warning = "TODO! " + moreinfo;
+		}
+	}
+
+	public void lobbyMenu() {
+		lobbymenuprefab.Clone();
+	}
+
+        /// <summary>
+        /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+        /// </summary>
+        protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}
+
+<root>
+	<div class="menu">
+			<h1 class="title">Zombie Survival</h1>
+			<div class="button-play", onclick=@(() => { PrimaryClickSound(); lobbyMenu(); })>
+				<h1>Play</h1>
+			</div>
+			<div class="button", onclick=@(() => {GlobalClickSound(); todo("");})>Options</div>
+			<div class="button", onclick=@(() => {Game.Close();})>Quit</div>
+	</div>
+
+	<div class="tut">
+		<div class="main">This is basic tutorial for full tutorial go to game's description in asset.party !</div>
+		<div class="split"></div>
+		<div class="cade">
+			<div>Caeding(Barricading) with hammer:</div>
+			<div>ALT when picking a prop to rotate the prop.</div>
+			<div>Right-click when selecting a prop while having at least one nail to nail the prop.</div>
+			<div>To nail the prop again, right-click while looking at it (maximum of four).</div>
+			<div>To pass through the cade, press Z.</div>
+		</div>
+		<div class="shop">
+			<div>Shop</div>
+			<div>Press B to open the shop.</div>
+		</div>
+		<div class="todo">TODO: Remove ugly this popup</div>
+	</div>
+</root>
+

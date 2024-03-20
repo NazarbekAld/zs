@@ -1,0 +1,119 @@
+Hud {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	z-index: 2;
+	// justify-content: center;
+	// align-items: center;
+	// font-weight: bold;
+	// border-radius: 20px;
+	// .title
+	// {
+	// 	font-size: 25px;
+	// 	font-family: Poppins;
+	// 	color: #fff;
+	// }
+	.generalinfo {
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		flex-direction: column;
+		gap: 2%;
+
+		.sides {
+			font-size: 30px;
+			position: relative;
+			flex-direction: column;
+			color: white;
+			font-family: Poppins;
+			font-style: bold;
+		}
+
+		.playerinfo {
+			position: relative;
+			flex-direction: column;
+			color: white;
+			font-family: Poppins;
+			font-style: bold;
+
+			.player_points {
+				color: aqua;
+			}
+		}
+	}
+
+	.human_state {
+		position: absolute;
+		width: 20%;
+		bottom: 32px;
+		left: 64px;
+		gap: 2%;
+
+		.bar {
+			font-family: Poppins;
+			font-size: 30px;
+
+
+			.body {
+				border: 1%;
+				background-color: rgb(20, 20, 20);
+				border-color: black;
+				height: 50px;
+				width: 100%;
+				
+
+				.fill {
+					justify-content: center;
+					align-items: center;
+					background-color: rgb(97, 255, 255);
+					color: black;
+					transition: all 10ms ease-in-out;
+				}
+			}
+		}
+	}
+	.zombie_state {
+		position: absolute;
+		width: 20%;
+		bottom: 32px;
+		left: 64px;
+		gap: 2%;
+
+		.bar {
+			font-family: Poppins;
+			font-size: 30px;
+
+
+			.body {
+				border: 1%;
+				background-color: rgb(20, 20, 20);
+				border-color: black;
+				height: 50px;
+				width: 100%;
+				
+
+				.fill {
+					justify-content: center;
+					align-items: center;
+					background-color: rgb(0, 128, 4);
+					color: black;
+					transition: all 10ms ease-in-out;
+				}
+			}
+		}
+	}
+
+	.weapon_info {
+		position: absolute;
+		width: 10%;
+		bottom: 32px;
+		right: 32px;
+		flex-direction: column;
+		gap: 1%;
+
+		color: white;
+	}
+}

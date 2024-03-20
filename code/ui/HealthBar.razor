@@ -1,0 +1,39 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System;
+@inherits Panel
+@attribute [StyleSheet]
+@namespace GeneralGame
+
+@code {
+
+    @* public HealthBar() {}
+    public HealthBar(float Current, float Max) {
+        this.Current = Current;
+        this.Max = Max;
+    }  *@
+    
+    public float Current {get; set;}
+
+    public float Max {get; set;}
+
+    public float fontPrecentage {get;set;} = 20f;
+
+    public override void Tick() {
+        base.Tick();
+
+        @* Log.Info((current is null) + "\t" + (max is null)); *@
+    }
+}
+
+
+<root class="bar">
+    <div class="body">
+        @if (Current > 1) {
+            <div class="fill", style="width: @((Current/Max) * 100)%; font-size: @((Current/Max) * fontPrecentage)%">
+                @(MathX.FloorToInt(Current/Max * 100f))%
+            </div>
+        }
+
+    </div>
+</root>

@@ -1,0 +1,177 @@
+PtsShop
+{
+	position: absolute;
+	top: 128px;
+	left: 128px;
+	right: 128px;
+	bottom: 128px;
+	background-color: transparent;
+	background-color: rgba(128, 128, 128, 0.89);
+	opacity: 1;
+	z-index: 1000;
+	pointer-events: all;
+	flex-direction: column;
+	&.hide {
+		opacity: 0;
+	}
+	.title
+	{
+		justify-content: center;
+		align-items: center;
+
+		width: 100%;
+		height: 5%;
+		background-color: gray;
+		font-size: 32px;
+		font-family: Poppins;
+		color: #fff;
+	}
+	.types {
+		flex-direction: row;
+		width: 70%;
+		height: 5%;
+		.button {
+			font-size: 10%;
+			color: white;
+			width: 20%;
+			height: 80%;
+			background-color: rgb(100, 100, 100);
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.select {
+		flex-direction: row;
+		height: 100%;
+		.weapons {
+			padding: 1%;
+			gap: 10px;
+			flex-direction: row;
+			width: 70%;
+			background-color: #999999;
+
+
+			.weapon {
+				color: white;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+
+				height: 20%;
+				width: 20%;
+				background-color: rgb(61, 61, 61);
+				border-radius: 24px;
+				transition: all 100ms ease-in-out;
+				&:hover {
+					border-radius: 5px;
+				}
+				.price {
+					flex-direction: column;
+					align-items: center;
+				
+					background-color: #5eff00;
+					font-size: 13%;
+					position: absolute;
+					width: 30%;
+					color: rgb(17, 17, 17);
+					font-family: Impact;
+					font-style: italic;
+					left: 64%;
+					bottom: 7%;
+					border-radius: 30%;
+				}
+			}
+			.ammo {
+				color: white;
+				flex-direction: column;
+				align-items: center;
+
+
+				height: 30%;
+				width: 20%;
+				background-color: rgb(61, 61, 61);
+				border-radius: 24px;
+				transition: all 100ms ease-in-out;
+				&:hover {
+					border-radius: 5px;
+				}
+				.info {
+					gap: 3%;
+					flex-direction: column;
+					align-items: center;
+
+					top:20%;
+				}
+				.price {
+					flex-direction: column;
+					height: 100%;
+					width: 100%;
+					.more {
+						position: absolute;
+						flex-direction: column;
+						align-items: center;
+					
+						background-color: #5eff00;
+						font-size: 10%;
+						width: 40%;
+						color: rgb(17, 17, 17);
+						font-family: Impact;
+						font-style: italic;
+						left: 22%;
+						bottom: 7%;
+						border-radius: 30%;
+					}
+					.amount {
+						position: absolute; //
+						flex-direction: column;
+						align-items: center;
+					
+						background-color: #5eff00;
+						font-size: 13%;
+						width: 30%;
+						color: rgb(17, 17, 17);
+						font-family: Impact;
+						font-style: italic;
+						left: 64%;
+						bottom: 7%;
+						border-radius: 30%;
+					}
+				}
+			}
+		}
+		.wp_info {
+			flex-direction: column;
+			width: 30%;
+			.wp_info_selected {
+				flex-direction: column;
+				width: 100%;
+				height: 80%;
+				gap: 2%;
+			}
+			.buy_section {
+				justify-content: center;
+				align-items: center;
+				height: 100%;
+				width: 100%;
+				.buy {
+					justify-content: center;
+					align-items: center;
+					width: 50%;
+					height: 30%;
+					background-color: green;
+					color: white;
+					border-radius: 30%;
+
+					transition: all 300ms ease-in-out;
+					&:hover {
+						border-radius: 10%;
+
+						background-color: rgb(0, 138, 0);
+					}
+				}
+			}
+		}
+	}
+	
+}

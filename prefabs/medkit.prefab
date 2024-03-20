@@ -1,0 +1,82 @@
+{
+  "RootObject": {
+    "__guid": "2ccaabeb-e135-4837-9c19-58c64c42072c",
+    "Name": "medkit",
+    "Scale": "0.5,0.5,0.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "BaseMele",
+        "__guid": "17ab6d0b-4ee5-4eea-acc7-24772ae17844",
+        "behaviours": [
+          {
+            "_type": "component",
+            "component_id": "d0ff2549-57f0-4cb6-93ec-86e613199305",
+            "go": "2ccaabeb-e135-4837-9c19-58c64c42072c",
+            "component_type": "MedKitBehaviour"
+          }
+        ],
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "ammoType": "MedSupplies",
+        "AttackSound": "models/machette/machete2.sound",
+        "cost": 20,
+        "Damage": 0,
+        "DamageForce": 0,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Med Kit",
+        "FireRate": 1,
+        "HitSound": "models/machette/machete2.sound",
+        "HitWorldSound": "models/machette/machete2.sound",
+        "HoldType": "Pistol",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "0,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "models/machette/machete2.sound",
+        "Punch": 0,
+        "Range": 220.50014,
+        "runRotation": "0,0,0,0",
+        "SeccondaryDamage": 0,
+        "SeccondaryFireRate": 1,
+        "staminaDrain": 50,
+        "type": "Tools",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/medkit_vm.prefab"
+        }
+      },
+      {
+        "__type": "ModelRenderer",
+        "__guid": "88159f24-626a-4dcd-b177-01c254f1c84b",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/medkit/medkit.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "MedKitBehaviour",
+        "__guid": "d0ff2549-57f0-4cb6-93ec-86e613199305",
+        "errorSound": "sounds/player_use_fail.sound",
+        "healPerShot": 16,
+        "medkit": {
+          "_type": "component",
+          "component_id": "17ab6d0b-4ee5-4eea-acc7-24772ae17844",
+          "go": "2ccaabeb-e135-4837-9c19-58c64c42072c",
+          "component_type": "BaseMele"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nibbles.medkit"
+  ]
+}

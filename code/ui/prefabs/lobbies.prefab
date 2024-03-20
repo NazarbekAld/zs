@@ -1,0 +1,27 @@
+{
+  "RootObject": {
+    "Id": "b408d4f7-a1a2-43e2-b28c-ca9bb17e8486",
+    "Name": "lobbies",
+    "Tags": "ui_closable",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ScreenPanel",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 100
+      },
+      {
+        "__type": "LobbyMenu",
+        "global": "sounds/button/global.sound",
+        "second": "sounds/button/second.sound"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

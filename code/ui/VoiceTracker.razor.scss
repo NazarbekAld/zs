@@ -1,0 +1,26 @@
+VoiceTracker
+{
+	position: absolute;
+	top: 40%;
+	left: 88%;
+	right: 0%;
+	bottom: 0;
+	background-color: transparent;
+	font-weight: bold;
+	border-radius: 20px;
+	flex-direction: column-reverse;
+	align-items: center;
+
+	width: 10%;
+	height: 45%;
+	gap: 10%;
+	.voice {
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background-color: rgb(85, 85, 85);
+		width: 90%;
+		height: 15%;
+		flex-direction: row;
+	}
+}

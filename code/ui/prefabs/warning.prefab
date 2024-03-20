@@ -1,0 +1,26 @@
+{
+  "RootObject": {
+    "Id": "bf484736-2d92-4367-b34b-3c56933c925f",
+    "Name": "warning",
+    "Tags": "ui_closable",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "ScreenPanel",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 1000
+      },
+      {
+        "__type": "WarningComponent",
+        "warning": "Unknown warning!"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

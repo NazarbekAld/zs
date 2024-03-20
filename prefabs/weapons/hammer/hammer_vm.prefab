@@ -1,0 +1,60 @@
+{
+  "RootObject": {
+    "__guid": "2b7bba00-3299-489c-9451-66adcc43f3e6",
+    "Name": "hammer_vm",
+    "Enabled": true,
+    "NetworkMode": 0,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "c0daf032-c4d3-42b5-becf-c34da1170261",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "models/hammer/model.vmdl",
+        "RenderType": "Off",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ViewModel",
+        "__guid": "8ec62240-87d7-44d9-ab4a-6cd2d6384e03",
+        "animation": {
+          "_type": "component",
+          "component_id": "79afea69-dd48-4d3f-8872-d30f3bb0b3f3",
+          "go": "2b7bba00-3299-489c-9451-66adcc43f3e6",
+          "component_type": "SimpleViewModelAnimationStrategy"
+        },
+        "doSprintAnimation": false,
+        "scale": 0.6999999,
+        "shift": "2.3,1.900001,-1.599996",
+        "shiftRot": "-0.7809748,0,0,0.6245626",
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "c0daf032-c4d3-42b5-becf-c34da1170261",
+          "go": "2b7bba00-3299-489c-9451-66adcc43f3e6",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "SimpleViewModelAnimationStrategy",
+        "__guid": "79afea69-dd48-4d3f-8872-d30f3bb0b3f3",
+        "attackRot": "-0.6398099,0.3010703,0.3010703,0.6398098",
+        "returnAfterAttack": 0.2,
+        "returnAfterSecondaryAttack": 0.25,
+        "secondaryAttackRot": "-0.6830127,-0.1830127,-0.1830127,0.6830127",
+        "vm": {
+          "_type": "component",
+          "component_id": "8ec62240-87d7-44d9-ab4a-6cd2d6384e03",
+          "go": "2b7bba00-3299-489c-9451-66adcc43f3e6",
+          "component_type": "ViewModel"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

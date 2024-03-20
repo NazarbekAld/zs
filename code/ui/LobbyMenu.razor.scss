@@ -1,0 +1,93 @@
+LobbyMenu
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	pointer-events: all;
+	flex-direction: column;
+
+	.createlobby
+	{
+		font-size: 30px;
+		// padding: 30px;
+		width: 50%;
+		font-family: Poppins;
+		color: #fff;
+		background-color: rgb(155, 194, 97);
+		
+		justify-content: center;
+		align-items: center;
+
+		transition: all 300ms ease-in-out;
+		transform-origin: center;
+		&:hover {
+			background-color: rgb(144, 190, 74);
+			width: 100%;
+			
+		}
+	}
+	.lobbies {
+		// justify-content: center;
+		flex-direction: column;
+		align-items: center;
+
+		color: white;
+		height: 60%;
+		width: 50%;
+		background-color: rgb(40, 40, 40);
+		gap: 10px;
+		.refresh {
+			flex-direction: row;
+			width: 90%;
+			height: 10%;
+			background-color: black;
+			font-size: 15%;
+			color: white;
+			font-family: Poppins;
+			transition: all 300ms ease-in-out;
+			flex-direction: column;
+			align-items: center;
+
+			&:hover {
+				background-color: rgb(22, 22, 22);
+			}
+		}
+		.lobby {
+			flex-direction: row;
+			width: 90%;
+			height: 10%;
+			background-color: black;
+			color: white;
+			font-family: Poppins;
+			transition: all 300ms ease-in-out;
+			&:hover {
+				background-color: rgb(22, 22, 22);
+			}
+		}
+	}
+	.mainmenu
+	{
+		cursor: pointer;
+		font-size: 30px;
+		width: 50%;
+		// padding: 30px;
+		font-family: Poppins;
+		color: #fff;
+		background-color: rgb(255, 41, 41);
+
+		justify-content: center;
+		align-items: center;
+
+		transition: all 300ms ease-in-out;
+		transform-origin: center;
+		&:hover {
+			background-color: rgb(255, 58, 58);
+			width: 100%;
+		}
+	}
+}

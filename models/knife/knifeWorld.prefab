@@ -1,0 +1,81 @@
+{
+  "RootObject": {
+    "__guid": "9ce28d14-1a4d-4dce-a106-8b94516374c5",
+    "Name": "knifeworld",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "894f5ad8-34b9-4e0c-8fd4-f0b64bbe258d",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "models/knife/world_knfie.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "SphereCollider",
+        "__guid": "780c48f5-febc-4bcb-90cf-ddf979d761df",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Radius": 10,
+        "Static": false
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "e7879d7e-1268-40a0-a01b-a8a341a7e813",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "BaseMele",
+        "__guid": "022f409b-c82f-4818-b1cc-27666d8dae1b",
+        "behaviours": [],
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "ammoType": "NONE",
+        "AttackSound": "models/machette/machete2.sound",
+        "cost": 20,
+        "Damage": 10,
+        "DamageForce": 5,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 1,
+        "DisplayName": "Knife",
+        "FireRate": 4,
+        "HitSound": "models/machette/knife_hit3.sound",
+        "HitWorldSound": "models/machette/knife_hitworld1.sound",
+        "HoldType": "Punch",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "0,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "models/machette/knife_stab.sound",
+        "Punch": 5,
+        "Range": 60,
+        "runRotation": "0,0,0,0",
+        "SeccondaryDamage": 25,
+        "SeccondaryFireRate": 2,
+        "staminaDrain": 20,
+        "type": "Melees",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "models/knife/fpp.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

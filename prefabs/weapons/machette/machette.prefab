@@ -1,0 +1,62 @@
+{
+  "RootObject": {
+    "__guid": "d9e0f2c6-3416-496d-b710-cf1d75259bb6",
+    "Name": "machette",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "31cb12d3-2e1b-43ec-bd5f-688c91ee48b3",
+        "BodyGroups": 1,
+        "CreateBoneObjects": false,
+        "Model": "models/machette/w/w_machetelod0.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BaseMele",
+        "__guid": "a7620536-7361-4859-b74e-1cf1999c1aa0",
+        "behaviours": [],
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "ammoType": "NONE",
+        "AttackSound": "models/machette/machete2.sound",
+        "cost": 20,
+        "Damage": 35,
+        "DamageForce": 5,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Machette",
+        "FireRate": 2,
+        "HitSound": "models/machette/knife_hit3.sound",
+        "HitWorldSound": "models/machette/knife_hitworld1.sound",
+        "HoldType": "Rifle",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-14,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "models/machette/knife_stab.sound",
+        "Punch": 0,
+        "Range": 100,
+        "runRotation": "-0.00007615242,0.008726203,0.008726203,0.9999238",
+        "SeccondaryDamage": 40,
+        "SeccondaryFireRate": 1.2,
+        "staminaDrain": 15,
+        "type": "Melees",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/machette/vm_machette.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

@@ -1,0 +1,63 @@
+{
+  "RootObject": {
+    "__guid": "9d4604d0-d66d-41c3-b271-9bdefbbe2a3f",
+    "Name": "medkit_vm",
+    "Rotation": "0.199161,-0.1956461,0.06819662,0.9578136",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ViewModel",
+        "__guid": "0eee8ce9-3517-4a27-a5f3-ab97e4a71e38",
+        "animation": {
+          "_type": "component",
+          "component_id": "e56b8a96-c946-4805-90f9-4bcf2c8c2020",
+          "go": "9d4604d0-d66d-41c3-b271-9bdefbbe2a3f",
+          "component_type": "SimpleViewModelAnimationStrategy"
+        },
+        "doSprintAnimation": false,
+        "scale": 0.49999997,
+        "shift": "2.3,1.900001,-1.4",
+        "shiftRot": "0.1822988,-0.5166042,0.129035,0.8265816",
+        "ModelRenderer": {
+          "_type": "component",
+          "component_id": "226eb187-a428-4279-93b4-d5dbc80bcd1a",
+          "go": "9d4604d0-d66d-41c3-b271-9bdefbbe2a3f",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "226eb187-a428-4279-93b4-d5dbc80bcd1a",
+        "BodyGroups": 18446744073709551615,
+        "CreateBoneObjects": false,
+        "Model": "models/items/medkit.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "SimpleViewModelAnimationStrategy",
+        "__guid": "e56b8a96-c946-4805-90f9-4bcf2c8c2020",
+        "attackRot": "0.1855913,0.2334486,-0.01850366,0.954314",
+        "returnAfterAttack": 0.5,
+        "returnAfterSecondaryAttack": 0.5,
+        "secondaryAttackRot": "0.199161,-0.1956454,0.06819649,0.9578137",
+        "vm": {
+          "_type": "component",
+          "component_id": "0eee8ce9-3517-4a27-a5f3-ab97e4a71e38",
+          "go": "9d4604d0-d66d-41c3-b271-9bdefbbe2a3f",
+          "component_type": "ViewModel"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "fish.medkit"
+  ]
+}

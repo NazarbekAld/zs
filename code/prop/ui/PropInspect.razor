@@ -1,0 +1,64 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace GeneralGame
+
+<root>
+	@if(cobj is not null) {
+		@(prop is not null) {
+			<div class="prop">
+			<div class="prop_name">@(cobj.Name)</div>
+			<HealthBar Current=@(prop.Health) Max=@(prop.MaxHealth) />
+			</div>
+		}
+	}
+</root>
+
+@code
+{
+	PlayerController controller;
+	PropBase prop = null;
+	GameObject cobj = null;
+	protected override void OnEnabled() {
+		base.OnEnabled();
+
+		controller = GameObject.Components.GetInAncestorsOrSelf<PlayerController>();
+
+	}
+
+	protected override void OnUpdate()
+	{
+
+		if (IsProxy) {
+			GameObject.Enabled = false;
+			return;
+		}
+
+		var startPos = controller.PlyCamera.Transform.Position;
+		var direction = controller.PlyCamera.Transform.Rotation.Forward;
+
+		var endPos = startPos + direction * 100f;
+		var trace = Scene.Trace.Ray( startPos, endPos )
+			.IgnoreGameObjectHierarchy( GameObject.Root )
+			.UsePhysicsWorld()
+			.UseHitboxes()
+			.Run();
+
+		prop = null;
+		cobj = null;
+		if (trace.Hit) {
+			if (trace.Component is null) return;
+			if (trace.Component.IsValid) {
+				prop = trace.Component.Components.GetInParentOrSelf<PropBase>();
+				if (prop is not null && trace.Component.GameObject is not null) {
+					cobj = trace.Component.GameObject;
+				}
+			}
+		}
+		
+	}
+        /// <summary>
+        /// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+        /// </summary>
+        protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+}

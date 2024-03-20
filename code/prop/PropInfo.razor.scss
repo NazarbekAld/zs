@@ -1,0 +1,65 @@
+PropInfo
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: transparent;
+	font-weight: bold;
+	flex-direction: column;
+	gap: 2%;
+	.name
+	{
+		justify-content: center;
+		align-items: center;
+		font-size: 30%;
+		font-family: Poppins;
+		color: #fff;
+	}
+	.health {
+		height: 20%;
+		.bar {
+			font-family: Poppins;
+			font-size: 50%;
+
+			.body {
+				border: 1%;
+				background-color: rgb(20, 20, 20);
+				border-color: black;
+				width: 100%;
+
+				.fill {
+					justify-content: center;
+					align-items: center;
+					background-color: rgb(9, 255, 0);
+					color: black;
+					transition: all 10ms ease-in-out;
+				}
+			}
+		}
+	}
+	.repair {
+		height: 10%;
+		.bar {
+			font-family: Poppins;
+			font-size: 40%;
+
+			.body {
+				border: 1%;
+				background-color: rgb(20, 20, 20);
+				border-color: black;
+				width: 100%;
+
+				.fill {
+					justify-content: center;
+					align-items: center;
+					background-color: rgb(231, 231, 231);
+					color: black;
+					transition: all 10ms ease-in-out;
+				}
+			}
+		}
+	}
+
+}

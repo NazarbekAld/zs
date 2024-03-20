@@ -1,0 +1,113 @@
+{
+  "RootObject": {
+    "Id": "c410b38a-20ac-4e84-b7d3-2bf27e9824f0",
+    "Name": "zombie",
+    "Tags": "hdmg,zombie",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "PlayerFootsteps"
+      },
+      {
+        "__type": "CitizenAnimationHelper",
+        "BodyWeight": 1,
+        "EyesWeight": 1,
+        "HeadWeight": 1,
+        "Height": 1,
+        "LookAtEnabled": false,
+        "Target": {
+          "_type": "component",
+          "go": "8f276995-be99-4c22-8a13-e4b80311e50e",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "Zombie",
+        "animationHelper": {
+          "_type": "component",
+          "go": "c410b38a-20ac-4e84-b7d3-2bf27e9824f0",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "body": {
+          "_type": "gameobject",
+          "go": "8f276995-be99-4c22-8a13-e4b80311e50e"
+        },
+        "eye": {
+          "_type": "gameobject",
+          "go": "4ed09c96-39dc-4ad1-9912-9eb5aeb7c5bb"
+        },
+        "eyeObject": {
+          "_type": "gameobject",
+          "go": "4ed09c96-39dc-4ad1-9912-9eb5aeb7c5bb"
+        },
+        "hitSounds": "sounds/zombie/zomb_runner_male1-attack01.sound",
+        "MaxHealth": 100,
+        "ZombieRagedol": {
+          "_type": "gameobject",
+          "prefab": "prefabs/ragdoll.prefab"
+        }
+      },
+      {
+        "__type": "NavMeshAgent",
+        "Acceleration": 500,
+        "Height": 64,
+        "MaxSpeed": 210.00069,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true,
+        "UpdateRotation": true
+      }
+    ],
+    "Children": [
+      {
+        "Id": "8f276995-be99-4c22-8a13-e4b80311e50e",
+        "Name": "body",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "MaterialOverride": "models/citizen/skin/citizen_skin_zombie.vmat",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "CitizenAnimationHelper",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "Height": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "go": "8f276995-be99-4c22-8a13-e4b80311e50e",
+              "component_type": "SkinnedModelRenderer"
+            }
+          },
+          {
+            "__type": "ModelCollider",
+            "IsTrigger": false,
+            "Model": "models/citizen/citizen.vmdl",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "Id": "4ed09c96-39dc-4ad1-9912-9eb5aeb7c5bb",
+        "Name": "Eye",
+        "Position": "0,0,1.481522",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "__references": []
+}

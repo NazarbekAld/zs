@@ -1,0 +1,94 @@
+{
+  "RootObject": {
+    "__guid": "88730b79-cd00-4be7-bbb6-a1ba3d2cf037",
+    "Name": "hammer",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "9347ad75-f5b9-4821-b330-a725a6076de2",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/hammer/model.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelCollider",
+        "__guid": "aac387c9-a8f4-469f-90a0-34c6a3ede686",
+        "IsTrigger": false,
+        "Model": "models/hammer/model.vmdl",
+        "Static": false
+      },
+      {
+        "__type": "BaseMele",
+        "__guid": "d2efc5d4-434e-40a4-86c6-99f4144d0477",
+        "behaviours": [
+          {
+            "_type": "component",
+            "component_id": "57bff149-3660-4460-8132-adfa96aafc2e",
+            "go": "88730b79-cd00-4be7-bbb6-a1ba3d2cf037",
+            "component_type": "HammerBehaviour"
+          }
+        ],
+        "aimPos": "0,0,0",
+        "aimRotation": "0,0,0,0",
+        "ammoType": "Nail",
+        "AttackSound": "models/machette/machete2.sound",
+        "cost": 20,
+        "Damage": 10,
+        "DamageForce": 5,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Hammer",
+        "FireRate": 3,
+        "HitSound": "prefabs/weapons/hammer/hammer_sound.sound",
+        "HitWorldSound": "prefabs/weapons/hammer/hammer_sound.sound",
+        "HoldType": "Punch",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "0,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsDeployed": false,
+        "KillSound": "prefabs/weapons/hammer/hammer_sound.sound",
+        "Punch": 1.1000001,
+        "Range": 118.200066,
+        "runRotation": "0,0,0,0",
+        "SeccondaryDamage": 50,
+        "SeccondaryFireRate": 3,
+        "staminaDrain": 15,
+        "type": "Tools",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/hammer/hammer_vm.prefab"
+        }
+      },
+      {
+        "__type": "HammerBehaviour",
+        "__guid": "57bff149-3660-4460-8132-adfa96aafc2e",
+        "caller": {
+          "_type": "component",
+          "component_id": "d2efc5d4-434e-40a4-86c6-99f4144d0477",
+          "go": "88730b79-cd00-4be7-bbb6-a1ba3d2cf037",
+          "component_type": "BaseMele"
+        },
+        "distance": 204.89995,
+        "info": {
+          "_type": "gameobject",
+          "prefab": "code/prop/propinfo.prefab"
+        },
+        "nail": {
+          "_type": "gameobject",
+          "prefab": "prefabs/nail.prefab"
+        },
+        "repairRate": 15
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

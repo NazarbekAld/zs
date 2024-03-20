@@ -1,0 +1,30 @@
+{
+  "RootObject": {
+    "__guid": "c9e6e2f8-c3c0-4e68-9567-a01dbcdcaf52",
+    "Name": "propinfo",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "WorldPanel",
+        "__guid": "2d38850e-5624-4d8c-958c-be750dec1273",
+        "HorizontalAlign": "Center",
+        "LookAtCamera": true,
+        "PanelSize": "355.8947,275.2995",
+        "RenderScale": 1,
+        "VerticalAlign": "Center"
+      },
+      {
+        "__type": "PropInfo",
+        "__guid": "07c6f58a-1083-4769-8a41-8f6969d5e0cb"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

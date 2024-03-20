@@ -1,0 +1,65 @@
+{
+  "RootObject": {
+    "__guid": "6e34cbeb-a5fb-4df0-8c38-c848f0345ea3",
+    "Name": "glock",
+    "Scale": "1.5,1.5,1.5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "df55c5b2-b0c7-4169-b4e3-eca429f7427d",
+        "BodyGroups": 1,
+        "CreateBoneObjects": false,
+        "Model": "models/glock/w/w_glock20lod0.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "BaseGun",
+        "__guid": "fcd813b3-1762-401b-9562-f44e8d5f5ad4",
+        "aimPos": "-1,1.43,0.56",
+        "aimRotation": "0,0,0,0",
+        "AmmoType": "Pistol",
+        "ClipSize": 15,
+        "cost": 20,
+        "Damage": 20,
+        "DamageForce": 5,
+        "DefaultAmmo": 60,
+        "DeploySound": "sounds/weapons/weapon_deploy3.sound",
+        "DeployTime": 0.5,
+        "DisplayName": "Glock 20",
+        "EmptyClipSound": "sounds/weapons/empty_submachineguns.sound",
+        "EmptyReloadSoundSequence": "models/glock/glockemptyreload.sndseq",
+        "EmptyReloadTime": 3.05,
+        "FireRate": 7,
+        "FireSound": "models/glock/glock20_fire1.sound",
+        "HoldType": "Pistol",
+        "HolsterSound": "sounds/weapons/weapon_holster3.sound",
+        "idlePos": "-4,0,0",
+        "ImpactEffect": "particles/impact.generic.vpcf",
+        "IsAuto": false,
+        "IsDeployed": false,
+        "MuzzleFlash": "particles/pistol_muzzleflash.vpcf",
+        "MuzzleSmoke": "particles/impact.generic.smokepuff.vpcf",
+        "Recoil": "-30,0,0",
+        "ReloadSoundSequence": "models/glock/glockreload.sndseq",
+        "ReloadTime": 2.7,
+        "runRotation": "-0.01513444,0.08583164,0.1729874,0.9810603",
+        "Spread": 0.01,
+        "type": "Pistols",
+        "ViewModelPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/pm/vm_glock.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

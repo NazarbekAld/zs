@@ -1,0 +1,82 @@
+@using System
+@using System.Collections.Generic
+@using System.Linq
+@using System.Threading.Tasks
+@using Sandbox;
+@using Sandbox.Network
+@namespace GeneralGame
+@inherits PanelComponent
+
+
+<root>
+	<div class="createlobby", onclick="@newLobby"><h1>CREATE LOBBY</h1></div>
+	<div class="lobbies">
+	@if (IsRefreshing) {
+		<label>Searching for lobbies around the globe. Please wait!</label>
+	}
+	@if (!IsRefreshing && lobbies.Count < 1) {
+		<label>No avaiable lobbies right now. Consider creating one!</label>
+		<div class="refresh", onclick="@RefreshLobbyList">Refresh</div>
+	}
+	@if (!IsRefreshing && lobbies.Count > 0) {
+		@foreach(var lobby in lobbies) {
+			<div class="lobby", onclick=@(() => { OpenLobby(lobby); })>
+				@lobby.Name's lobby         @lobby.Members/@lobby.MaxMembers
+			</div>
+		}
+	}
+	</div>
+	<div class="mainmenu", onclick="@clean"><h1>BACK</h1></div>
+</root>
+
+@code
+{
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( RealTime.Now );
+	[Property]
+	SoundEvent global;
+	
+	[Property]
+	SoundEvent second;
+	private List<LobbyInformation> lobbies = new();
+	public bool IsRefreshing = true;
+
+	protected override void OnEnabled()
+	{
+		_ = RefreshLobbyList();
+
+		base.OnEnabled();
+	}
+
+	public void clean() {
+		Sound.Play(global);
+		GameObject.Enabled = false;
+		GameObject.Destroy();
+	}
+
+	
+
+        public void newLobby() {
+		Sound.Play(second);
+		GameManager.ActiveScene.LoadFromFile("scene/dom.scene");
+	}
+
+	@* public void CreateLobby() {
+		GameManager.ActiveScene.LoadFromFile("scenes/dom.scene");
+	} *@
+
+	private async Task RefreshLobbyList() {
+		IsRefreshing = true;
+		lobbies = await Networking.QueryLobbies();
+		IsRefreshing = false;
+	}
+
+	private void OpenLobby( LobbyInformation lobby )
+	{
+		GameNetworkSystem.Connect( lobby.LobbyId );
+	}
+
+}

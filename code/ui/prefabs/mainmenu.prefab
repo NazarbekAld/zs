@@ -1,0 +1,39 @@
+{
+  "RootObject": {
+    "__guid": "7c1e301e-d756-49c5-b395-d16c4b579958",
+    "Name": "mainmenu",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ScreenPanel",
+        "__guid": "a91449d2-221d-4585-a25b-d26d6f991da4",
+        "AutoScreenScale": true,
+        "Opacity": 1,
+        "Scale": 1,
+        "ZIndex": 100
+      },
+      {
+        "__type": "GameMenu",
+        "__guid": "ed3a137f-e9dc-4893-b721-e25218abed76",
+        "global": "sounds/button/global.sound",
+        "lobbymenuprefab": {
+          "_type": "gameobject",
+          "prefab": "code/ui/prefabs/lobbies.prefab"
+        },
+        "primary": "sounds/button/primary_click.sound",
+        "warningprefab": {
+          "_type": "gameobject",
+          "prefab": "code/ui/prefabs/warning.prefab"
+        }
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
